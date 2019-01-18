@@ -1,5 +1,10 @@
 <template>
-  <div class="movies-container flex-col">
+  <div class="movies flex-col flex-col__start">
+    <div class="movies__title mb-4">Latest Releases</div>
+    <div class="movies__container flex-row flex-row__btw">
+
+    </div>
+
     <div class="text-xs-center">
       <v-pagination
         v-model="page"
@@ -27,8 +32,16 @@ export default class Movies extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.movies-container {
+@import 'src/styles/global';
+@import 'src/styles/colors';
+
+.movies {
   width: 100%;
   height: 100%;
+  padding: 50px 40px;
+
+  &__title {
+    @extend %page-title;
+  }
 }
 </style>

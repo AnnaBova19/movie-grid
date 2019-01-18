@@ -3,10 +3,10 @@
     <v-icon @click="goToPage('/')">language</v-icon>
     <v-toolbar-title>Movies</v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items>
       <v-menu offset-y>
-        <div class="flex-row flex-row__btw" slot="activator">
-          <span>My Account</span>
+        <div class="flex-row flex-row__btw menu" slot="activator">
+          <span class="hidden-sm-and-down">My Account</span>
           <v-icon>expand_more</v-icon>
         </div>
         <v-list>
@@ -55,5 +55,15 @@ export default class Header extends Vue {
 .v-icon {
   color: $color-mg-primary-white;
   cursor: pointer;
+}
+
+.menu {
+  padding: 10px;
+  border: 1px solid $color-mg-primary-white;
+  border-radius: 5px;
+
+  span {
+    margin-right: 15px;
+  }
 }
 </style>

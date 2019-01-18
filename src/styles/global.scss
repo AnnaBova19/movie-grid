@@ -1,3 +1,5 @@
+@import 'colors';
+
 html {
   overflow-y: hidden !important;
 }
@@ -42,4 +44,11 @@ body {
   &__btw {
     justify-content: space-between;
   }
+}
+
+/******** Page Title**********/
+%page-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: $color-mg-primary-light-gray;
 }
