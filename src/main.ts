@@ -2,6 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+import AppHeader from './shared/components/header.vue'
+
+Vue.use(Vuetify)
+
+Vue.component('AppHeader', AppHeader)
 
 Vue.config.productionTip = false
 
