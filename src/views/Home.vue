@@ -1,7 +1,7 @@
 <template>
-  <div class="home-container flex-col ">
+  <v-layout align-center justify-center column class="home-container">
     <v-btn color="info" @click="goToMovies()">choose movie</v-btn>
-  </div>
+  </v-layout>
 </template>
 
 <script lang="ts">

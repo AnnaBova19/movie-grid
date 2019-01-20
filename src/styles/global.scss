@@ -1,9 +1,6 @@
-@import 'colors';
+@import 'variables';
 
-html {
-  overflow-y: hidden !important;
-}
-
+/******** General **********/
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -11,44 +8,27 @@ body {
   width: 100%;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  &__end {
-    justify-content: flex-end;
-  }
-  &__center {
-    justify-content: center;
-  }
-  &__btw {
-    justify-content: space-between;
-  }
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  &__start {
-    align-items: flex-start;
-    justify-content: start;
-  }
-  &__end {
-    align-items: flex-end;
-    justify-content: flex-end;
-  }
-  &__btw {
-    justify-content: space-between;
-  }
-}
-
-/******** Page Title**********/
+/******** Page Title **********/
 %page-title {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: $color-mg-primary-light-gray;
+}
+
+/******** Background Image **********/
+%bg-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/******** Poster **********/
+.poster {
+  @extend %bg-image;
+  width: 200px;
+  height: 300px;
+  margin: 15px 10px;
+  border-radius: $radius-mg;
+  box-shadow: $shadow-mg-20;
+  cursor: pointer;
 }

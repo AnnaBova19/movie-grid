@@ -1,7 +1,28 @@
+@import 'variables';
+
+/******** Toolbar **********/
+.v-toolbar {
+  &.dialog__toolbar {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: $color-mg-primary-white !important;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 20px 0;
+  }
+}
+
 .v-toolbar__content {
   padding: 0 40px !important;
 }
 
 .v-content {
+  overflow: auto;
   background: $color-mg-background;
+}
+
+@media only screen and (max-width: 959px) {
+  .v-toolbar__content {
+    padding: 0 15px !important;
+  }
 }

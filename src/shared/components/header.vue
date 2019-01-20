@@ -5,7 +5,7 @@
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-menu offset-y>
-        <div class="flex-row flex-row__btw menu" slot="activator">
+        <div align-center justify-space-between row class="menu" slot="activator">
           <span class="hidden-sm-and-down">My Account</span>
           <v-icon>expand_more</v-icon>
         </div>
@@ -45,7 +45,7 @@ export default class Header extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import 'src/styles/colors';
+@import 'src/styles/variables';
 
 .theme--light.v-toolbar {
   background: $color-mg-primary-gray;
@@ -58,12 +58,18 @@ export default class Header extends Vue {
 }
 
 .menu {
-  padding: 10px;
+  padding: 5px 10px;
   border: 1px solid $color-mg-primary-white;
-  border-radius: 5px;
+  border-radius: $radius-mg;
 
   span {
     margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .menu {
+    padding: 5px;
   }
 }
 </style>
