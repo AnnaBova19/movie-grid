@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <v-toolbar class="header__toolbar">
     <v-icon @click="goToPage('/')">language</v-icon>
     <v-toolbar-title>Movies</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -50,11 +50,6 @@ export default class Header extends Vue {
 .theme--light.v-toolbar {
   background: $color-mg-primary-gray;
   color: $color-mg-primary-white;
-}
-
-.v-icon {
-  color: $color-mg-primary-white;
-  cursor: pointer;
 }
 
 .menu {

@@ -33,7 +33,7 @@
             </div>
           </v-layout>
         </div>
-        
+
         <div class="movie__info">
           <div class="movie__title mb-4">
             {{movie.title}} ({{getReleaseYear(movie.release_date)}})
@@ -219,6 +219,13 @@ export default class DialogMovieInfo extends Vue {
   }
 
   .movie {
+    &__poster {
+      .poster {
+        width: 34vw;
+        height: 51vw;
+      }
+    }
+
     &__rate {
       &.small {
         font-size: 3.5vw;

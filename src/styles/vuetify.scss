@@ -2,6 +2,13 @@
 
 /******** Toolbar **********/
 .v-toolbar {
+  &.header__toolbar {
+    .v-icon {
+      color: $color-mg-primary-white;
+      cursor: pointer;
+    }
+  }
+
   &.dialog__toolbar {
     background-color: transparent !important;
     box-shadow: none;

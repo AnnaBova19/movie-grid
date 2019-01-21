@@ -2,13 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
+// Import components
 import Vuetify from 'vuetify'
 import Toasted from 'vue-toasted'
-
-import 'vuetify/dist/vuetify.min.css'
-
 import AppHeader from './shared/components/header.vue'
 
+// Import stylesheets
+import 'vuetify/dist/vuetify.min.css'
+
+// Init plugins
 Vue.use(Vuetify)
 Vue.use(Toasted)
 

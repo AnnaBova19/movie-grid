@@ -1,7 +1,7 @@
 <template>
-  <div align-start justify-center column class="movies">
-    <div class="movies__title mb-4">Latest Releases</div>
-    <v-layout align-center justify-center row class="movies__container mb-4">
+  <div class="movies" v-if="movies.length">
+    <div class="movies__title mb-4 ml-2">Latest Releases</div>
+    <v-layout class="movies__container mb-4">
       <v-tooltip right v-for="(movie, index) in movies" :key="index">
         <div class="poster"
           @click.prevent="openDialogMovieInfo(movie, index)"
@@ -12,7 +12,7 @@
       </v-tooltip>
     </v-layout>
 
-    <v-layout align-center justify-center row v-if="movies.length">
+    <v-layout align-center justify-center row>
       <v-flex xs3>
         <v-pagination
           v-model="pageNumber"
@@ -104,8 +104,13 @@ export default class Movies extends Vue {
   }
 
   &__container {
-    flex-wrap: wrap;
     width: 100%;
+    display: grid;
+    grid-gap: 10px 15px;
+    -ms-grid-columns: (minmax(230px,1fr))[auto-fill];
+    grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+    -ms-grid-column-align: center;
+    justify-items: center;
   }
 }
 </style>
