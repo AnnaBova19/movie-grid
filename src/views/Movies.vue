@@ -35,6 +35,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import axios from 'axios'
 import DialogMovieInfo from '../shared/components/dialogMovieInfo.vue'
+import { environment } from '../environments/environment'
 
 @Component({
   components: {
@@ -42,7 +43,6 @@ import DialogMovieInfo from '../shared/components/dialogMovieInfo.vue'
   }
 })
 export default class Movies extends Vue {
-  baseUrl = 'http://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&page='
   movies = []
   pageNumber = 1
   totalPages = null
@@ -53,7 +53,7 @@ export default class Movies extends Vue {
   // Fetch movies data
   fetchMovies (page: number) {
     axios
-      .get(`${this.baseUrl}${page}`)
+      .get(`${environment.baseUrl}${page}`)
       .then(response => {
         this.movies = response.data.results
         this.pageNumber = response.data.page
