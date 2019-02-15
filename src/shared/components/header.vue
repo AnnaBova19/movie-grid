@@ -1,6 +1,6 @@
 <template>
   <v-toolbar class="header__toolbar">
-    <v-icon @click="goToPage('/')">language</v-icon>
+    <router-link to="/"><v-icon>language</v-icon></router-link>
     <v-toolbar-title>Movies</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
@@ -12,9 +12,10 @@
         <v-list>
           <v-list-tile
             v-for="(item, index) in items"
-            :key="index"
-            @click="goToPage(item.link)">
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            :key="index">
+            <v-list-tile-title>
+              <router-link :to="{ path: item.link }">{{ item.title }}</router-link>
+            </v-list-tile-title>
           </v-list-tile>
         </v-list>
       </v-menu>
@@ -36,10 +37,6 @@ export default class Header extends Vue {
       ],
       item: 'My Account'
     }
-  }
-
-  goToPage (page: string): void {
-    this.$router.push(page)
   }
 }
 </script>

@@ -1,6 +1,8 @@
 <template>
   <v-layout align-center justify-center column class="home-container">
-    <v-btn color="info" @click="goToMovies()">choose movie</v-btn>
+    <router-link to="/movies">
+     <v-btn color="info">choose movie</v-btn>
+    </router-link>
   </v-layout>
 </template>
 
@@ -12,9 +14,7 @@ import { Component, Vue } from 'vue-property-decorator'
   }
 })
 export default class Home extends Vue {
-  goToMovies (): void {
-    this.$router.push('/movies')
-  }
+
 }
 </script>
 
